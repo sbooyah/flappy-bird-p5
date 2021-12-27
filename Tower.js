@@ -1,6 +1,9 @@
 class Tower{
-  constructor() {
+  constructor(h, s, l) {
     this.x = width;
+    this.h = h;
+    this.s = s;
+    this.l = l;
     this.topY = -2;
     this.dx = -5;
     this.width = 100;
@@ -13,9 +16,8 @@ class Tower{
     return Math.floor(Math.random() * (500 - 100 + 1) + 100);
   }
   show() {
-    fill(0, 100, 50);
+    fill(this.h, this.s, this.l);
     rect(this.x, this.topY, this.width, this.topHeight);
-    fill(200, 100, 50);
     rect(this.x, this.botY, this.width, this.botHeight);
   }
   update() {
@@ -27,18 +29,5 @@ class Tower{
     }
    this.x+= this.dx;
   }
-  text() {
-    fill(0, 100, 100);
-    text(`Top Tower 
-          x: ${this.x} 
-          topY: ${this.topY} 
-          width: ${this.width} 
-        topHeight: ${this.topHeight}`, 20, 20);
-    text(`Bot Tower 
-          x: ${this.x} 
-          botY: ${this.botY} 
-          width: ${this.width} 
-          botHeight: ${this.botHeight}`, 20, 120);
-    text(`opening ${this.opening}`, 20, 200)
-  }
+  
 }

@@ -1,12 +1,15 @@
 let bird;
-let tower;
+let tower1;
+let tower2;
 let gameState = 'play';
 
 function setup() {
   createCanvas(800, 800);
   colorMode(HSL, 359, 100, 100, 100);
   bird = new Bird(width/2, height/2, 20, 20);
-  tower = new Tower;
+  tower1 = new Tower(0, 100, 50);
+  tower2 = new Tower(100, 100, 50);
+  tower2.x+= width/2 + tower2.width/2;
 }
 
 function draw() {
@@ -17,9 +20,10 @@ function draw() {
     text('Press ENTER to play', width/2, height/2 + 30);
   } else if (gameState == 'play'){      // PLAY GAMESTATE
     background(50);
-    tower.update();
-    tower.show();
-    tower.text();
+    tower1.update(); 
+    tower2.update();
+    tower1.show();
+    tower2.show();
     bird.update();
     bird.show();
   }

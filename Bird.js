@@ -5,18 +5,18 @@ class Bird{
     this.dy = 0;
     this.w = w;
     this.h = h;
-    this.g = 0.19;
+    this.g = 0.0009 ;
   }
   show() {
     fill(0, 100, 100);
     ellipse(this.x, this.y, this.w, this.h);
   }
   update() {
-    this.dy = this.dy + this.g;
+    this.dy = this.dy + this.g * deltaTime;
     if (this.y > height - (this.w/2)) {{
       this.dy = 0;
       this.y = height - (this.w/2)
     }}
-    this.y = this.y + this.dy;
+    this.y = this.y + this.dy * deltaTime;
   }
 }

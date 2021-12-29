@@ -5,7 +5,7 @@ class Tower{
     this.s = s;
     this.l = l;
     this.topY = -2;
-    this.dx = -5;
+    this.dx = -0.3;
     this.width = 100;
     this.opening = 200;
     this.topHeight = this.randomize();
@@ -27,7 +27,7 @@ class Tower{
       this.botY = this.topHeight + this.opening;
       this.botHeight = height - this.botY;
     }
-   this.x+= this.dx;
+   this.x+= this.dx * deltaTime;
   }
   
 }

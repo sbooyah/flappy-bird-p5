@@ -31,7 +31,7 @@ function draw() {
 
 function keyPressed() {
   if (keyCode === 32) {
-    bird.dy = -7.5;     
+    bird.dy = -0.55;     
   } if (keyCode === 13) {
     gameState = 'play';
   }

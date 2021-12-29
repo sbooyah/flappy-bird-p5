@@ -15,6 +15,8 @@ function setup() {
 function draw() {
   if (gameState == 'start') {           // START GAMESTATE
     background(50);
+    tower1.x = width;
+    tower2.x = width + width/1.8;
     textAlign(CENTER);
     text('Hello Bird Friend', width/2, height/2);
     text('Press ENTER to play', width/2, height/2 + 30);
@@ -32,7 +34,11 @@ function draw() {
 function keyPressed() {
   if (keyCode === 32) {
     bird.dy = -0.55;     
-  } if (keyCode === 13) {
+  } 
+  if (keyCode === 13) {
     gameState = 'play';
+  }
+  if (keyCode === ESCAPE) {
+    gameState = 'start';
   }
 }

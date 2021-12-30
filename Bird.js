@@ -13,9 +13,9 @@ class Bird{
   }
   update() {
     this.dy = this.dy + this.g * deltaTime;
-    if (this.y > height - (this.w/2)) {{
+    if (this.y > height - (this.w/2) - 16) {{
       this.dy = 0;
-      this.y = height - (this.w/2)
+      this.y = height - (this.w/2) - 16;
     }}
     this.y = this.y + this.dy * deltaTime;
   }
